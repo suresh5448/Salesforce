@@ -1,0 +1,9 @@
+<apex:page showHeader="false" standardController="Account" recordSetVar="account" sidebar="false">
+ <apex:stylesheet value="{!URLFOR($Resource.CSS, 'mystyles/styleCSS.css')}"/>
+ <apex:pageBlock >
+ <apex:pageBlockTable value="{!account}" var="accs">
+ <apex:column value="{!accs.Name}" style="width:10px">
+ </apex:column>
+ </apex:pageBlockTable>
+ </apex:pageBlock>
+</apex:page>

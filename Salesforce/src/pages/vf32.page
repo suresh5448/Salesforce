@@ -1,0 +1,11 @@
+<apex:page controller="MyControllerExt" tabStyle="Account">
+<apex:pageBlock title="Hello {!$User.FirstName}!">
+This is your new page for the {!name} controller.
+<apex:pageBlockSection >
+<apex:pageBlockTable value="{!account}" var="acc"> 
+<apex:column value="{!acc.name}"/>
+<apex:column value="{!acc.phone}"/>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

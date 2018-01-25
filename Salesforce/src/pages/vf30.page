@@ -1,0 +1,11 @@
+<apex:page standardController="Account" recordSetVar="accounts" extensions="AccountData">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:dataList value="{!accounts}" var="acc">
+<apex:outputField value="{!acc.Name}"/>
+</apex:dataList>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

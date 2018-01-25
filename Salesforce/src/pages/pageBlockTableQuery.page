@@ -1,0 +1,13 @@
+<apex:page standardController="Account" >
+<apex:pageBlock title="{!$User.FirstName}">
+Your Viewing Page Query String Parameter
+</apex:pageBlock>
+<apex:pageBlock >
+<apex:dataTable value="{!account.contacts}" var="c" cellpadding="4" border="1">
+<apex:column ><apex:facet name="header">Name</apex:facet>{!c.Name}</apex:column>
+<apex:column ><apex:facet name="header">Phone</apex:facet>{!c.Phone}</apex:column>
+</apex:dataTable>
+</apex:pageBlock>
+<apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"></apex:detail>
+<apex:relatedList list="contacts"/>
+</apex:page>

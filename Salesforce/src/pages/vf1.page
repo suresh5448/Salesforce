@@ -1,0 +1,15 @@
+<apex:page standardController="Account" recordSetVar="acts">
+    <apex:pageBlock title="Your Viewing {!$User.FirstName}" >
+        <apex:pageBlockSection title="List of Accounts" collapsible="true" >
+            <apex:pageBlockTable value="{!acts}" var="a" >
+                <apex:column value="{!a.Name}" />
+                <apex:column value="{!a.Industry}"/>
+                <apex:column value="{!a.Phone}"/>
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        <apex:pageBlockSection title="Phone" collapsible="true">
+              12345678
+        </apex:pageBlockSection>
+        <apex:pageBlockSection ><apex:detail subject="{!Account.OwnerId}" relatedList="false" title="false"/></apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

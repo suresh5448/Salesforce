@@ -1,0 +1,7 @@
+<apex:component controller="DynamicEmailController" access="global">
+    <apex:attribute name="RelatedToId" assignTo="{!emailRelatedToId}" type="String" description="Id of the RelatedTo Object for the email message"/>
+    <apex:attribute name="TemplateId" assignTo="{!emailTemplateId}" type="String" description="The label that contains the template Id" />
+    <apex:attribute name="HTML" assignTo="{!isHTML}" type="Boolean" description="Set to true if you want HTML" />
+    <apex:outputText escape="false" value="{!mergedEmailHtmlBody}" rendered="{!isHtml}"/> 
+    <apex:outputText escape="false" value="{!mergedEmailPlainTextBody}" rendered="{!!isHtml}"/>
+</apex:component>

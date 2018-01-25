@@ -1,0 +1,29 @@
+<apex:page standardController="Account" extensions="apex_con_exten">
+<apex:pageBlock title="{!$User.FirstName}">
+Your viewing passing parameter id using param to subject
+</apex:pageBlock>
+<apex:form >
+<apex:pageBlock >
+<apex:tabPanel >
+<apex:tab label="All Contacts">
+<apex:dataTable value="{!account.contacts}" var="con">
+<apex:column ><apex:facet name="header">Name</apex:facet><apex:commandLink rerender="details">{!con.Name}<apex:param name="cid" value="{!con.id}"></apex:param></apex:commandLink></apex:column>
+<apex:column ><apex:facet name="header">Phone</apex:facet>{!con.Phone}</apex:column>
+</apex:dataTable>
+</apex:tab>
+<apex:tab label="Account Specific">
+<apex:pageBlock ><apex:pageBlockTable value="{!acts}" var="s">
+<apex:column ><apex:commandLink rerender="details">{!s.Name}<apex:param name="cid" value="{!s.id}"></apex:param></apex:commandLink></apex:column>
+<apex:column value="{!s.Phone}"/>
+</apex:pageBlockTable></apex:pageBlock>
+</apex:tab>
+</apex:tabPanel>
+</apex:pageBlock>
+<apex:outputPanel id="details">
+<apex:pageBlock title="details">
+<apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+</apex:pageBlock>
+</apex:outputPanel>
+</apex:form>
+
+</apex:page>

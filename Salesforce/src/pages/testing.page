@@ -1,0 +1,9 @@
+<apex:page standardController="Account">
+ 
+  <apex:pageBlock title="{!$User.FirstName}">
+  This is your new Page:{!account.name}
+  </apex:pageBlock>
+
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="Act" >
+  <apex:pageBlock >
+      <apex:pageBlockSection >
+      {!Act.Name}
+      </apex:pageBlockSection>
+      <apex:pageBlockSection >
+      <apex:pageBlockTable value="{!Act}" var="b">
+      <apex:column value="{!b.Phone}"/>
+      </apex:pageBlockTable>
+      </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:page>

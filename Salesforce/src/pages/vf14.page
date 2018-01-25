@@ -1,0 +1,28 @@
+<apex:page standardController="Account" >
+<apex:pageBlock >
+your viewing contacts onmouseover event
+</apex:pageBlock>
+<apex:pageBlock title="Contacts">
+<apex:form >
+<apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="3">
+<apex:column >
+<apex:outputPanel >
+<apex:actionSupport event="onmouseover" rerender="disp">
+<apex:param name="cid" value="{!contact.id}"/>
+</apex:actionSupport>
+{!contact.Name}
+</apex:outputPanel>
+</apex:column>
+</apex:dataTable>
+</apex:form>
+</apex:pageBlock>
+    <apex:outputPanel id="disp">
+    <apex:actionStatus startText="Loading.....">
+    <apex:facet name="stop">
+    <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+    </apex:facet>
+    </apex:actionStatus>
+    </apex:outputPanel>
+
+
+</apex:page>
